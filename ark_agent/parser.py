@@ -16,8 +16,9 @@ import difflib
 import re
 from dataclasses import dataclass, field
 
-from .config import DEFAULT_BROWSER, NUMBER_RANGES, SYNONYMS
+from .config import NUMBER_RANGES, SYNONYMS
 from .registry import CommandSpec, load_commands
+from .user_config import get_default_browser
 
 _FILLERS = ("please ", "hey ark ", "ark ", "ok ark ", "okay ark ")
 
@@ -47,7 +48,7 @@ def normalize(text: str) -> str:
                 value = value[len(filler):].strip()
                 changed = True
     if value == "open browser":
-        value = f"open {DEFAULT_BROWSER}"
+        value = f"open {get_default_browser()}"
     if value == "open intellij":
         value = "open intellij idea"
     # Longest synonym first, so "vs code" is not split into "vs" + "code".

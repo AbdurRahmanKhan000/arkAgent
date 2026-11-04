@@ -25,6 +25,7 @@ import re
 from dataclasses import dataclass
 
 from .parser import Parser
+from .user_config import get_vosk_model_path
 
 LOW_CONFIDENCE_THRESHOLD = 0.5
 
@@ -60,7 +61,9 @@ def parse_vosk_result(result_json: str) -> tuple[str, float | None]:
 class VoiceEngine:
     def __init__(self, parser: Parser | None = None, model_path: str | None = None):
         self.parser = parser if parser is not None else Parser()
-        self.model_path = model_path
+        # v1.1: read the model path from arkagent_config.json if the
+        # caller did not pass one, so the GUI no longer needs a code edit.
+        self.model_path = model_path or get_vosk_model_path()
         self.mode = "command"  # or "dictation"
         self.listening = False
         self.last_transcript = ""

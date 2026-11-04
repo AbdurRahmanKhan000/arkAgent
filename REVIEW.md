@@ -88,3 +88,27 @@ all produced the expected dry-run / confirmation output.
 4. Voice: one push-to-talk command, then dictation on/off.
 5. Only then: confirm-gated commands (close, shutdown) — and
    never test shutdown first.
+
+## v1.1 addendum — review after real Windows testing
+
+Real v1 failures reproduced from the user's screenshots:
+- "open browser" / "open chrome" / "open brave": PATH-only search.
+- "open this pc": no executable mapping, because it is a shell folder.
+- "yes" after a failed command: confusing, because no confirmation was pending.
+
+Fixes verified here (Linux, plus a fake-drive test):
+- 51 tests pass (was 36), self-check OK: 418 commands, 241 handlers.
+- Fake-drive discovery test: Chrome found under a non-C: drive layout.
+- Text-loop smoke test in dry-run: "please open chrome for me",
+  "open this pc", "open chrome and open notepad",
+  "set volume to fifty percent", and "clise chrome" -> asks
+  "Did you mean: close chrome?" and "no" correctly cancels.
+- Two new discovery tests failed on first run and were fixed:
+  a backslash path bug that only shows on Linux, and a mock
+  target for the default-browser helper.
+
+Still NOT tested here, and still needing the user's Windows run:
+- Real Chrome/Brave on C:/F:/E: drives, real This PC / Recycle Bin
+  shell opens, real Tkinter GUI window, real microphone + Vosk.
+  The v1.1 code paths for those are in place, but only a Windows
+  run can prove them.

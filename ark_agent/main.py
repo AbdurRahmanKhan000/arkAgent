@@ -17,6 +17,7 @@ import argparse
 import sys
 
 from .actions import ActionExecutor
+from .intelligence import IntelligentParser
 from .parser import Parser
 from .registry import find_duplicates, load_commands
 from .tts import Speaker
@@ -45,12 +46,33 @@ def self_check() -> int:
     return 0
 
 
+def _run_commands(executor: ActionExecutor, speaker: Speaker, commands) -> None:
+    """Execute resolved commands, honouring confirmations per command."""
+    for command in commands:
+        result = executor.execute(command)
+        print(result.message)
+        speaker.speak(result.message)
+        if result.needs_confirmation:
+            try:
+                answer = input("yes/no> ").strip()
+            except (EOFError, KeyboardInterrupt):
+                print("\nCancelled.")
+                return
+            confirm_result = executor.confirm_pending(answer)
+            print(confirm_result.message)
+            speaker.speak(confirm_result.message)
+
+
 def text_loop(dry_run: bool = False) -> int:
     parser = Parser()
+    smart = IntelligentParser(parser)
     executor = ActionExecutor(dry_run=dry_run)
     speaker = Speaker(enabled=True)
-    print("arkAgent (text mode). Type a command, 'exit' to quit.")
+    print("arkAgent v1.1 (text mode). Type a command, 'exit' to quit.")
+    print("Daily sentences work too: 'please open chrome for me',")
+    print("'open chrome and open notepad', 'set volume to fifty percent'.")
     print("Confirmations: answer 'yes' or 'no' when asked.")
+    pending_suggestion: str | None = None
     while True:
         try:
             text = input("> ").strip()
@@ -60,23 +82,42 @@ def text_loop(dry_run: bool = False) -> int:
         if text.lower() in ("exit", "quit"):
             print("Goodbye.")
             return 0
+        # A "yes" after a "Did you mean?" question runs that suggestion.
+        # A "yes" with no question waiting is not a command (v1 lesson).
+        if pending_suggestion is not None:
+            if text.lower() in ("yes", "confirm", "do it"):
+                suggestion = pending_suggestion
+                pending_suggestion = None
+                parsed = parser.parse(suggestion)
+                if parsed is not None:
+                    _run_commands(executor, speaker, [parsed])
+                continue
+            pending_suggestion = None
+            if text.lower() in ("no", "cancel"):
+                print("OK, not running that.")
+                continue
         if executor.confirmations.pending is not None:
             result = executor.confirm_pending(text)
             print(result.message)
             speaker.speak(result.message)
             continue
-        parsed = parser.parse(text)
-        if parsed is None:
-            suggestions = parser.suggestions(text)
-            message = "I do not recognise that command."
-            if suggestions:
-                message += f" Did you mean: {', '.join(suggestions)}?"
+        resolved = smart.resolve(text)
+        if resolved.method == "ask" and resolved.suggestion:
+            pending_suggestion = resolved.suggestion
+            message = f"Did you mean: {resolved.suggestion}? Say yes or no."
             print(message)
             speaker.speak(message)
             continue
-        result = executor.execute(parsed)
-        print(result.message)
-        speaker.speak(result.message)
+        if not resolved.commands:
+            message = "I do not recognise that command."
+            print(message)
+            speaker.speak(message)
+            continue
+        if resolved.method in ("paraphrase", "fuzzy"):
+            print(f"Understood as: {resolved.understood_as}")
+        if resolved.method == "multi":
+            print(f"Running {len(resolved.commands)} commands: {resolved.understood_as}")
+        _run_commands(executor, speaker, resolved.commands)
     return 0
 
 

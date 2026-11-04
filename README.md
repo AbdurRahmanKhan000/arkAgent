@@ -1,9 +1,9 @@
-# arkAgent — Fixed-Command Laptop Agent (No LLM)
+# arkAgent v1.1 — Fixed-Command Laptop Agent (No LLM)
 
 A small, fast, offline laptop agent for Windows. You speak or type a
 command, it does exactly that command — nothing more, nothing guessed.
 
-**418 commands in v1**, including apps, browsers, IDEs, Windows
+**418 commands in v1.1, plus daily-sentence understanding**, including apps, browsers, IDEs, Windows
 settings, files, volume/media, power, screenshots, and a large
 Microsoft Word / Excel / PowerPoint / Outlook set. See `commands.md`
 for the full registry, and `commands.json` for the machine-readable
@@ -75,10 +75,12 @@ arkAgent/
    page, unzip it, and note its folder path. If accuracy is poor
    in noise, try the medium English model instead — it is larger
    but still far smaller than any LLM.
-4. Tell the code where the model is. The simplest v1 way is to
-   pass it in code when creating `VoiceEngine(model_path=...)`,
-   or set it in `gui.py` before launch. The GUI will otherwise
-   show a clear "model not set" message instead of crashing.
+4. Tell the agent where the model is: open the GUI, paste the
+   folder path into the Settings panel, and press Save settings.
+   That writes `arkagent_config.json` (which is git-ignored, so
+   your local paths are not committed). Voice reads that file.
+   Copy `arkagent_config.example.json` to `arkagent_config.json`
+   if you prefer to edit a file instead.
 
 ## Run it — safest order
 
@@ -132,6 +134,15 @@ These are in the registry, but their real `.exe` names must be
 filled in in `config.py` (`APP_EXECUTABLES`) once those apps are
 installed. Until then the agent reports "not found" instead of
 guessing a path.
+
+## Finding apps on D:, E: or F: drives
+
+v1.1 searches PATH, the Windows App Paths registry, Program
+Files / AppData on every drive, and drive roots for portable
+apps. If an app is still not found, add it once to
+`arkagent_config.json` under "apps", e.g.
+`"chrome": "F:\\Google\\Chrome\\Application\\chrome.exe"`,
+and it will work from then on. See `arkagent_config.example.json`.
 
 ## Uploading this to GitHub (arkAgent)
 

@@ -27,6 +27,7 @@ import webbrowser
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from .app_discovery import SPECIAL_APPS, find_app_executable, get_drives
 from .config import APP_EXECUTABLES, PROTECTED_PROCESSES, WEBSITES
 from .parser import ParsedCommand
 
@@ -181,7 +182,7 @@ class ActionExecutor:
             subprocess.Popen(args)
             return ActionResult(True, f"Started: {' '.join(args)}")
         except FileNotFoundError:
-            return ActionResult(False, f"Program not found: {args[0]}")
+            return ActionResult(False, f"Program not found on this PC: {args[0]}")
 
     def _hotkey(self, keys: list[str], action: str) -> ActionResult:
         if self.dry_run or not self.is_windows:
@@ -456,16 +457,48 @@ class ActionExecutor:
 
     def _launch_app(self, command: ParsedCommand) -> ActionResult:
         name = self._app_name(command)
-        exe = APP_EXECUTABLES.get(name)
         if self.dry_run or not self.is_windows:
             return ActionResult(True, f"[dry-run] open {name}", action=command.action)
+        # Special Windows targets first: This PC, Recycle Bin, Settings,
+        # File Explorer and other system locations are not .exe files.
+        if name in SPECIAL_APPS:
+            kind, target = SPECIAL_APPS[name]
+            if kind == "shell_folder":
+                try:
+                    os.startfile(target)  # type: ignore[attr-defined]
+                    return ActionResult(True, f"Opened {name}", action=command.action)
+                except Exception as exc:
+                    return ActionResult(False, f"Could not open {name}: {exc}", action=command.action)
+            if kind == "settings":
+                try:
+                    os.startfile(target)  # type: ignore[attr-defined]
+                    return ActionResult(True, f"Opened {name}", action=command.action)
+                except Exception as exc:
+                    return ActionResult(False, f"Could not open {name}: {exc}", action=command.action)
+            return self._run_fixed([target])
+        exe = APP_EXECUTABLES.get(name)
         if exe is None:
-            # Start-menu / Store apps: try the fixed name, never user text.
-            return ActionResult(False, f"No executable mapping for '{name}'. Add it to config.APP_EXECUTABLES.", action=command.action)
-        found = shutil.which(exe)
-        if found:
-            return self._run_fixed([found])
-        return ActionResult(False, f"Program not found on this PC: {exe}. Is {name} installed?", action=command.action)
+            return ActionResult(
+                False,
+                f"No app mapping for '{name}'. If it is a Windows Store app, "
+                "add its full .exe path to arkagent_config.json under \"apps\".",
+                action=command.action,
+            )
+        # v1.1: search PATH, registry, known folders on EVERY drive,
+        # and a shallow scan of drive roots — not PATH alone.
+        found = find_app_executable(name)
+        if found is not None:
+            return self._run_fixed([str(found)])
+        drives = ", ".join(str(d) for d in get_drives())
+        return ActionResult(
+            False,
+            f"Could not find {name} ({exe}). I searched PATH, the Windows "
+            f"App Paths registry, Program Files and AppData on drives "
+            f"{drives}, and the top folders of those drives. If {name} is "
+            "installed elsewhere, add its full path to arkagent_config.json "
+            "under \"apps\", or try open edge, which is built into Windows.",
+            action=command.action,
+        )
 
     def _close_app(self, command: ParsedCommand) -> ActionResult:
         name = self._app_name(command)
@@ -474,6 +507,8 @@ class ActionExecutor:
             return ActionResult(False, f"Refused: '{name}' is a protected system process and cannot be closed.", action=command.action)
         if self.dry_run or not self.is_windows:
             return ActionResult(True, f"[dry-run] close {name}", action=command.action)
+        if name == "settings":
+            return self._run_fixed(["taskkill", "/IM", "SystemSettings.exe", "/F"])
         return self._run_fixed(["taskkill", "/IM", exe, "/F"])
 
     def _open_website(self, command: ParsedCommand) -> ActionResult:
