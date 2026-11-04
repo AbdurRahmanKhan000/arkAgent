@@ -1,0 +1,2510 @@
+[
+  {
+    "phrase": "open chrome",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open edge",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open brave",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open firefox",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open opera",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open spotify",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open whatsapp",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open telegram",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open discord",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open zoom",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open microsoft teams",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open vlc media player",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open windows media player",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open photos",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open paint",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open notepad",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open calculator",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open calendar",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open clock",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open mail",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open snipping tool",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open file explorer",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open task manager",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open control panel",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open settings",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open windows security",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open arkmedia",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open arksnap",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open arkdownload",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open recycle bin",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open this pc",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open microsoft store",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open xbox",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Apps"
+  },
+  {
+    "phrase": "open visual studio code",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open visual studio",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open intellij idea",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open pycharm",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open webstorm",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open android studio",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open eclipse",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open netbeans",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open dev c++",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open code blocks",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open sublime text",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open notepad++",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open python interpreter",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open python idle",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open jupyter notebook",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open jupyter lab",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open anaconda navigator",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open git bash",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open command prompt",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open powershell",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open windows terminal",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open docker desktop",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open postman",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open mysql workbench",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open pgadmin",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open mongodb compass",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open figma",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open xampp",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open virtualbox",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open github desktop",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "IDEs and Developer Tools"
+  },
+  {
+    "phrase": "open claude",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open gemini",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open grok",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open chatgpt",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open copilot",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open youtube",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open github",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open google",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open gmail",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open google drive",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open linkedin",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open whatsapp web",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open stack overflow",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open wikipedia",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open google docs",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open google sheets",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open notion",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open netflix",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open google maps",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open google translate",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open weather",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open facebook",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open instagram",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open amazon",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open daraz",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open spotify web player",
+    "action": "open_website",
+    "risk": "safe",
+    "category": "Websites"
+  },
+  {
+    "phrase": "open system about",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open windows update",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open bluetooth settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open wifi settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open network settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open sound settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open display settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open brightness settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open personalization settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open theme settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open lock screen settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open accounts settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open privacy settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open storage settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open battery settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open power settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open date and time settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open language settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open keyboard settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open mouse settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open touchpad settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open printer settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open apps settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open default apps settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open startup apps settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open notifications settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open focus settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open accessibility settings",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open device manager",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open disk management",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open windows security and update",
+    "action": "open_settings",
+    "risk": "safe",
+    "category": "System Settings"
+  },
+  {
+    "phrase": "open downloads folder",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files and Folders"
+  },
+  {
+    "phrase": "open documents folder",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files and Folders"
+  },
+  {
+    "phrase": "open pictures folder",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files and Folders"
+  },
+  {
+    "phrase": "open videos folder",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files and Folders"
+  },
+  {
+    "phrase": "open music folder",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files and Folders"
+  },
+  {
+    "phrase": "open desktop folder",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files and Folders"
+  },
+  {
+    "phrase": "close chrome",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close edge",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close brave",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close firefox",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close spotify",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close whatsapp",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close telegram",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close discord",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close zoom",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close vlc media player",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close notepad",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close calculator",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close paint",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close file explorer",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close settings",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close task manager",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close microsoft word",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close microsoft excel",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close microsoft powerpoint",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close visual studio code",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close pycharm",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close intellij idea",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close android studio",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close microsoft teams",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close arkmedia",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close arksnap",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close arkdownload",
+    "action": "close_app",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close current window",
+    "action": "close_window",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close all browsers",
+    "action": "close_all_browsers",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "close all apps",
+    "action": "close_all_apps",
+    "risk": "confirm",
+    "category": "Close Apps"
+  },
+  {
+    "phrase": "open new tab",
+    "action": "open_new_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "close tab",
+    "action": "close_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "close current tab",
+    "action": "close_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "reopen closed tab",
+    "action": "reopen_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "switch to next tab",
+    "action": "next_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "switch to previous tab",
+    "action": "previous_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "go to first tab",
+    "action": "first_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "go to last tab",
+    "action": "last_tab",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "refresh page",
+    "action": "refresh",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "hard refresh page",
+    "action": "hard_refresh",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "go back",
+    "action": "go_back",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "go forward",
+    "action": "go_forward",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "go to home page",
+    "action": "go_home",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open new window",
+    "action": "open_new_window",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "close browser window",
+    "action": "close_window",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open incognito window",
+    "action": "open_private_window",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open private window",
+    "action": "open_private_window",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open history",
+    "action": "open_history",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open downloads in browser",
+    "action": "open_browser_downloads",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open bookmarks",
+    "action": "open_bookmarks",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "bookmark this page",
+    "action": "bookmark_page",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "search for <text>",
+    "action": "search_text",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "type <text> and press enter",
+    "action": "type_and_enter",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "type <text> in search box and press enter",
+    "action": "type_search_and_enter",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "open website <website>",
+    "action": "open_website_typed",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "focus address bar",
+    "action": "focus_address_bar",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "clear address bar",
+    "action": "clear_address_bar",
+    "risk": "safe",
+    "category": "Browser Control"
+  },
+  {
+    "phrase": "scroll down",
+    "action": "scroll_down",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll up",
+    "action": "scroll_up",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll down a little",
+    "action": "scroll_down_small",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll up a little",
+    "action": "scroll_up_small",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll down a lot",
+    "action": "scroll_down_large",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll up a lot",
+    "action": "scroll_up_large",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll to top of page",
+    "action": "scroll_top",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll to bottom of page",
+    "action": "scroll_bottom",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll right",
+    "action": "scroll_right",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll left",
+    "action": "scroll_left",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "page down",
+    "action": "page_down",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "page up",
+    "action": "page_up",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll down <number> times",
+    "action": "scroll_down_n",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "scroll up <number> times",
+    "action": "scroll_up_n",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "move mouse up",
+    "action": "mouse_up",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "move mouse down",
+    "action": "mouse_down",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "move mouse left",
+    "action": "mouse_left",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "move mouse right",
+    "action": "mouse_right",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "click",
+    "action": "mouse_click",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "double click",
+    "action": "mouse_double_click",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "right click",
+    "action": "mouse_right_click",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "press enter",
+    "action": "key_enter",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "press escape",
+    "action": "key_escape",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "press tab",
+    "action": "key_tab",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "press space",
+    "action": "key_space",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "select all",
+    "action": "key_select_all",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "copy",
+    "action": "key_copy",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "paste",
+    "action": "key_paste",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "cut",
+    "action": "key_cut",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "undo",
+    "action": "key_undo",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "redo",
+    "action": "key_redo",
+    "risk": "safe",
+    "category": "Scrolling, Mouse and Keyboard"
+  },
+  {
+    "phrase": "mute volume",
+    "action": "mute",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "unmute volume",
+    "action": "unmute",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "turn sound off",
+    "action": "mute",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "turn sound on",
+    "action": "unmute",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "volume up",
+    "action": "volume_up",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "volume down",
+    "action": "volume_down",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "increase volume",
+    "action": "volume_up",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "decrease volume",
+    "action": "volume_down",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "set volume to <number> percent",
+    "action": "set_volume",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "set volume to <number>",
+    "action": "set_volume",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "play",
+    "action": "media_play",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "pause",
+    "action": "media_pause",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "play or pause",
+    "action": "media_play_pause",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "next song",
+    "action": "media_next",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "previous song",
+    "action": "media_previous",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "next track",
+    "action": "media_next",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "previous track",
+    "action": "media_previous",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "stop music",
+    "action": "media_stop",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "play music",
+    "action": "play_music",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "pause music",
+    "action": "media_pause",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "open volume mixer",
+    "action": "open_volume_mixer",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "increase brightness",
+    "action": "brightness_up",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "decrease brightness",
+    "action": "brightness_down",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "set brightness to <number> percent",
+    "action": "set_brightness",
+    "risk": "safe",
+    "category": "Volume, Media and Display"
+  },
+  {
+    "phrase": "lock computer",
+    "action": "lock",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "lock screen",
+    "action": "lock",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "sleep computer",
+    "action": "sleep",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "restart computer",
+    "action": "restart",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "shut down computer",
+    "action": "shutdown",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "sign out",
+    "action": "sign_out",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "cancel shutdown",
+    "action": "cancel_shutdown",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "show desktop",
+    "action": "show_desktop",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "minimize all windows",
+    "action": "minimize_all",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "restore all windows",
+    "action": "restore_all",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "switch window",
+    "action": "alt_tab",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "switch to next window",
+    "action": "alt_tab",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "open task view",
+    "action": "task_view",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "turn wifi on",
+    "action": "wifi_on",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "turn wifi off",
+    "action": "wifi_off",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "turn bluetooth on",
+    "action": "bluetooth_on",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "turn bluetooth off",
+    "action": "bluetooth_off",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "turn airplane mode on",
+    "action": "airplane_on",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "turn airplane mode off",
+    "action": "airplane_off",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "show wifi networks",
+    "action": "show_wifi",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "disconnect wifi",
+    "action": "wifi_off",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "enable dark mode",
+    "action": "dark_mode_on",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "enable light mode",
+    "action": "dark_mode_off",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "take screenshot",
+    "action": "screenshot",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "take screenshot of window",
+    "action": "screenshot_window",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "open clipboard history",
+    "action": "clipboard_history",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "clear clipboard",
+    "action": "clear_clipboard",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "empty recycle bin",
+    "action": "empty_recycle_bin",
+    "risk": "confirm",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "what time is it",
+    "action": "tell_time",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "what is the date",
+    "action": "tell_date",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "show battery status",
+    "action": "battery_status",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "show system info",
+    "action": "system_info",
+    "risk": "safe",
+    "category": "System, Power and Network"
+  },
+  {
+    "phrase": "open microsoft word",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "open microsoft excel",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "open microsoft powerpoint",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "open microsoft outlook",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "open microsoft onenote",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "create new word document",
+    "action": "new_word_doc",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "open new blank document in word",
+    "action": "new_word_doc",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "save document",
+    "action": "save_doc",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "save document as",
+    "action": "save_doc_as",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "close word document",
+    "action": "close_doc",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "type <text> in word",
+    "action": "type_in_word",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "type <text> in document",
+    "action": "type_in_word",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "bold selected text in word",
+    "action": "word_bold",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "italic selected text in word",
+    "action": "word_italic",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "underline selected text in word",
+    "action": "word_underline",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "increase font size in word",
+    "action": "word_font_up",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "decrease font size in word",
+    "action": "word_font_down",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "align text left in word",
+    "action": "word_align_left",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "align text center in word",
+    "action": "word_align_center",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "align text right in word",
+    "action": "word_align_right",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "align text justify in word",
+    "action": "word_align_justify",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "insert page break in word",
+    "action": "word_page_break",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "insert table in word",
+    "action": "word_insert_table",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "find text in document",
+    "action": "word_find",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "replace text in document",
+    "action": "word_replace",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "print document",
+    "action": "print_doc",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "zoom in document",
+    "action": "word_zoom_in",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "zoom out document",
+    "action": "word_zoom_out",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "check spelling in document",
+    "action": "word_spellcheck",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "create new excel workbook",
+    "action": "new_excel_workbook",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "create new powerpoint presentation",
+    "action": "new_ppt",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "open new email",
+    "action": "new_email",
+    "risk": "safe",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "send email",
+    "action": "send_email",
+    "risk": "confirm",
+    "category": "Office and Documents"
+  },
+  {
+    "phrase": "search for file <file>",
+    "action": "search_file",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "search files for <text>",
+    "action": "search_file",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "create new folder",
+    "action": "create_folder",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "create new text file",
+    "action": "create_text_file",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "rename file",
+    "action": "rename_file",
+    "risk": "confirm",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "delete file",
+    "action": "delete_file",
+    "risk": "confirm",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "move file to recycle bin",
+    "action": "recycle_file",
+    "risk": "confirm",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open downloads",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open documents",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open pictures",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open videos",
+    "action": "open_folder",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open recent files",
+    "action": "open_recent",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "sort files by name",
+    "action": "sort_by_name",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "sort files by date",
+    "action": "sort_by_date",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "show hidden files",
+    "action": "show_hidden_files",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "hide hidden files",
+    "action": "hide_hidden_files",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "copy file path",
+    "action": "copy_file_path",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open sticky notes",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "set timer for <number> minutes",
+    "action": "set_timer",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "set alarm",
+    "action": "set_alarm",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "open alarm",
+    "action": "launch_app",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "check internet speed",
+    "action": "internet_speed",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "show ip address",
+    "action": "show_ip",
+    "risk": "safe",
+    "category": "Files, Search and Productivity"
+  },
+  {
+    "phrase": "insert header in word",
+    "action": "word_insert_header",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert footer in word",
+    "action": "word_insert_footer",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert page number in word",
+    "action": "word_insert_page_number",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "add bullet list in word",
+    "action": "word_bullet_list",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "add numbered list in word",
+    "action": "word_numbered_list",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "remove bullet list in word",
+    "action": "word_remove_list",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "increase indent in word",
+    "action": "word_indent_up",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "decrease indent in word",
+    "action": "word_indent_down",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert image in word",
+    "action": "word_insert_image",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert hyperlink in word",
+    "action": "word_insert_hyperlink",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert date in word",
+    "action": "word_insert_date",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert time in word",
+    "action": "word_insert_time",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change line spacing to single in word",
+    "action": "word_spacing_single",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change line spacing to double in word",
+    "action": "word_spacing_double",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "set line spacing to 1.5 in word",
+    "action": "word_spacing_1_5",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "save document as pdf",
+    "action": "save_doc_as_pdf",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "export document as pdf",
+    "action": "save_doc_as_pdf",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "open recent document in word",
+    "action": "word_open_recent",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "close all word documents",
+    "action": "close_all_word_docs",
+    "risk": "confirm",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "select paragraph in word",
+    "action": "word_select_paragraph",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "select line in word",
+    "action": "word_select_line",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "go to start of document",
+    "action": "doc_start",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "go to end of document",
+    "action": "doc_end",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert comment in word",
+    "action": "word_insert_comment",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "track changes on in word",
+    "action": "word_track_on",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "track changes off in word",
+    "action": "word_track_off",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "show word count",
+    "action": "word_count",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert horizontal line in word",
+    "action": "word_insert_line",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "clear formatting in word",
+    "action": "word_clear_formatting",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change text color to red in word",
+    "action": "word_color_red",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change text color to blue in word",
+    "action": "word_color_blue",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change text color to black in word",
+    "action": "word_color_black",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "highlight selected text in word",
+    "action": "word_highlight",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "create table of contents in word",
+    "action": "word_toc_create",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "update table of contents in word",
+    "action": "word_toc_update",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert cover page in word",
+    "action": "word_cover_page",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "set margins to narrow in word",
+    "action": "word_margins_narrow",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "set margins to normal in word",
+    "action": "word_margins_normal",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change page orientation to portrait in word",
+    "action": "word_portrait",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change page orientation to landscape in word",
+    "action": "word_landscape",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert section break in word",
+    "action": "word_section_break",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert footnote in word",
+    "action": "word_footnote",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert endnote in word",
+    "action": "word_endnote",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "change font size to <number> in word",
+    "action": "word_font_size",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert new paragraph in word",
+    "action": "word_new_paragraph",
+    "risk": "safe",
+    "category": "MS Word Extra"
+  },
+  {
+    "phrase": "insert new row in excel",
+    "action": "excel_insert_row",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "insert new column in excel",
+    "action": "excel_insert_column",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "delete row in excel",
+    "action": "excel_delete_row",
+    "risk": "confirm",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "delete column in excel",
+    "action": "excel_delete_column",
+    "risk": "confirm",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "freeze top row in excel",
+    "action": "excel_freeze_top",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "unfreeze panes in excel",
+    "action": "excel_unfreeze",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "sort ascending in excel",
+    "action": "excel_sort_asc",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "sort descending in excel",
+    "action": "excel_sort_desc",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "apply filter in excel",
+    "action": "excel_filter_on",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "remove filter in excel",
+    "action": "excel_filter_off",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "sum selected cells in excel",
+    "action": "excel_sum",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "format cells as currency in excel",
+    "action": "excel_currency",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "format cells as percentage in excel",
+    "action": "excel_percent",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "start slideshow in powerpoint",
+    "action": "ppt_slideshow",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "next slide",
+    "action": "ppt_next",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "previous slide",
+    "action": "ppt_previous",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "go to first slide",
+    "action": "ppt_first",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "go to last slide",
+    "action": "ppt_last",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "reply to email",
+    "action": "email_reply",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "forward email",
+    "action": "email_forward",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "mark email as read",
+    "action": "email_mark_read",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "archive email",
+    "action": "email_archive",
+    "risk": "safe",
+    "category": "Daily Office"
+  },
+  {
+    "phrase": "start listening",
+    "action": "voice_start",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "stop listening",
+    "action": "voice_stop",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "pause listening",
+    "action": "voice_pause",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "resume listening",
+    "action": "voice_resume",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "start dictation",
+    "action": "dictation_start",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "stop dictation",
+    "action": "dictation_stop",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "what did you hear",
+    "action": "show_last_transcript",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "show command list",
+    "action": "show_commands",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "search commands for <text>",
+    "action": "search_commands",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "open command history",
+    "action": "open_history_log",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "clear command history",
+    "action": "clear_history",
+    "risk": "confirm",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "open start menu",
+    "action": "open_start",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "open taskbar search",
+    "action": "open_search_ui",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "open action center",
+    "action": "open_action_center",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "open quick settings",
+    "action": "open_quick_settings",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "open notification center",
+    "action": "open_notifications_ui",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "convert text to uppercase",
+    "action": "text_upper",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "convert text to lowercase",
+    "action": "text_lower",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "speak selected text",
+    "action": "speak_selection",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "set default browser to chrome",
+    "action": "set_default_browser_chrome",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "set default browser to edge",
+    "action": "set_default_browser_edge",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "set default browser to brave",
+    "action": "set_default_browser_brave",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "set default ide to visual studio code",
+    "action": "set_default_ide_vscode",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "set default ide to pycharm",
+    "action": "set_default_ide_pycharm",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  },
+  {
+    "phrase": "repeat last command",
+    "action": "repeat_last",
+    "risk": "safe",
+    "category": "Daily Use and Voice Control"
+  }
+]
