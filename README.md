@@ -1,9 +1,9 @@
-# arkAgent v1.1 — Fixed-Command Laptop Agent (No LLM)
+# arkAgent v2.0 — Fixed-Command Laptop Agent (No LLM)
 
 A small, fast, offline laptop agent for Windows. You speak or type a
-command, it does exactly that command — nothing more, nothing guessed.
+task, it shows a plan and does that task step by step — nothing more, nothing guessed.
 
-**418 commands in v1.1, plus daily-sentence understanding**, including apps, browsers, IDEs, Windows
+**418 commands in v2.0, plus daily-sentence and multi-step task understanding**, including apps, browsers, IDEs, Windows
 settings, files, volume/media, power, screenshots, and a large
 Microsoft Word / Excel / PowerPoint / Outlook set. See `commands.md`
 for the full registry, and `commands.json` for the machine-readable
@@ -22,18 +22,24 @@ on purpose, for heavy daily voice use.
 - **Text + voice, one parser** (`ark_agent/parser.py`). If it works
   typed, it works spoken.
 - **Voice that is hard to fool** (`ark_agent/voice.py`):
-  - Command mode: grammar-constrained Vosk, only registry phrases.
+  - Command mode: grammar-constrained Vosk, only registry phrases, plus up to 3 alternatives tried in order (v2).
   - Dictation mode: after "start dictation", speech is typed only
     and never executed as a command. "stop dictation" exits.
   - Low-confidence results are not executed; the agent asks you
     to repeat and shows what it heard.
   - Push-to-talk by default, so TV and background speech do not
     trigger it. Wake-word (openWakeWord) is a future add-on, not v1.
-- **Professional GUI + cartoon character** (`ark_agent/gui.py`,
-  `ark_agent/character.py`): dark interface, command log, search,
-  and a canvas-drawn character that blinks idle, raises its ears
-  when listening, turns a gear when working, opens its mouth when
-  speaking, smiles on success, and looks worried on error.
+- **Tasks, not just single actions** (`ark_agent/tasks.py`):
+  "open chrome and search for cats" shows a 2-step plan and runs
+  it. "create a word document and type hello" is a 3-step plan.
+  "set up my work" opens Chrome, VS Code and Spotify. A failing
+  step stops the task and names the step.
+- **Modern web GUI + animated character** (`ark_agent/web_server.py`,
+  `ark_agent/web/`): a web interface at http://127.0.0.1:8765 —
+  dark, rounded, professional, with a CSS-animated character that
+  blinks idle, raises its ears when listening, turns a gear when
+  working, and opens its mouth when speaking. The Tkinter GUI
+  (`ark_agent/gui.py`) remains as a fallback.
 - **Safe actions** (`ark_agent/actions.py`): allowlist only, fixed
   argument lists, no shell, no user text as a command, protected
   processes (including explorer.exe) can never be closed, and
@@ -55,11 +61,14 @@ arkAgent/
     voice.py             Vosk command + dictation modes
     tts.py               OS voice (SAPI on Windows)
     character.py         animated character state machine
-    gui.py               Tkinter professional interface
-    main.py              CLI: --gui / --text / --check / --list-commands
+    gui.py               Tkinter interface (fallback)
+    web_server.py        modern web interface (v2 primary)
+    web/                 index.html, style.css, app.js
+    tasks.py             multi-step task planner
+    main.py              CLI: --web / --gui / --text / --check / --list-commands
   tests/                 parser, actions, security, registry, voice, character
   requirements.txt
-  run_gui.bat / run_text.bat   (Windows launchers)
+  run_web.bat / run_gui.bat / run_text.bat   (Windows launchers)
 ```
 
 ## Install on Windows
@@ -71,10 +80,11 @@ arkAgent/
    python -m pip install -r requirements.txt
    ```
 3. Voice model (voice mode only, text mode needs none of this):
-   download `vosk-model-small-en-us` from the official Vosk models
-   page, unzip it, and note its folder path. If accuracy is poor
-   in noise, try the medium English model instead — it is larger
-   but still far smaller than any LLM.
+   download `vosk-model-en-us-0.22` (about 128 MB, recommended for
+   heavy daily use) from the official Vosk models page, unzip it,
+   and note its folder path. The small `vosk-model-small-en-us-0.15`
+   also works, but 0.22 hears longer sentences and accents better.
+   Both are offline and far smaller than any LLM.
 4. Tell the agent where the model is: open the GUI, paste the
    folder path into the Settings panel, and press Save settings.
    That writes `arkagent_config.json` (which is git-ignored, so
@@ -93,7 +103,11 @@ python -m ark_agent.main --text --dry-run
 REM 2. Real text mode
 python -m ark_agent.main --text
 
-REM 3. Professional GUI
+REM 3. Modern web GUI (v2 primary)
+python -m ark_agent.main --web
+REM or double-click run_web.bat — opens http://127.0.0.1:8765
+
+REM 4. Tkinter GUI (fallback)
 python -m ark_agent.main --gui
 REM or double-click run_gui.bat
 ```

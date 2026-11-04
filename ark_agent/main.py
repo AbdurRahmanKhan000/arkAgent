@@ -1,7 +1,8 @@
 """arkAgent command line.
 
 Usage (from the arkAgent folder):
-  python -m ark_agent.main --gui            professional GUI + character
+  python -m ark_agent.main --web             modern web interface (v2 primary)
+  python -m ark_agent.main --gui            Tkinter GUI (fallback)
   python -m ark_agent.main --text           typed-command loop
   python -m ark_agent.main --text --dry-run safe testing, no real actions
   python -m ark_agent.main --check           registry + handler self-check
@@ -20,6 +21,7 @@ from .actions import ActionExecutor
 from .intelligence import IntelligentParser
 from .parser import Parser
 from .registry import find_duplicates, load_commands
+from .tasks import TaskPlanner
 from .tts import Speaker
 
 
@@ -66,9 +68,10 @@ def _run_commands(executor: ActionExecutor, speaker: Speaker, commands) -> None:
 def text_loop(dry_run: bool = False) -> int:
     parser = Parser()
     smart = IntelligentParser(parser)
+    planner = TaskPlanner(smart)
     executor = ActionExecutor(dry_run=dry_run)
     speaker = Speaker(enabled=True)
-    print("arkAgent v1.1 (text mode). Type a command, 'exit' to quit.")
+    print("arkAgent v2.0 (text mode). Type a task or command, 'exit' to quit.")
     print("Daily sentences work too: 'please open chrome for me',")
     print("'open chrome and open notepad', 'set volume to fifty percent'.")
     print("Confirmations: answer 'yes' or 'no' when asked.")
@@ -101,6 +104,17 @@ def text_loop(dry_run: bool = False) -> int:
             print(result.message)
             speaker.speak(result.message)
             continue
+        # v2: a multi-step task gets a visible plan before it runs.
+        plan = planner.plan(text)
+        if plan is not None and len(plan.steps) >= 2:
+            print(f"Task: {plan.title}")
+            for i, step in enumerate(plan.steps, start=1):
+                print(f"  {i}. {step}")
+            task_commands = planner.plan_to_commands(plan)
+            if len(task_commands) < len(plan.steps):
+                print("Warning: one task step could not be understood and will be skipped.")
+            _run_commands(executor, speaker, task_commands)
+            continue
         resolved = smart.resolve(text)
         if resolved.method == "ask" and resolved.suggestion:
             pending_suggestion = resolved.suggestion
@@ -123,7 +137,8 @@ def text_loop(dry_run: bool = False) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     args = argparse.ArgumentParser(prog="arkAgent")
-    args.add_argument("--gui", action="store_true", help="Open the professional GUI")
+    args.add_argument("--gui", action="store_true", help="Open the Tkinter GUI (fallback)")
+    args.add_argument("--web", action="store_true", help="Open the modern web interface (v2 primary)")
     args.add_argument("--text", action="store_true", help="Typed-command loop")
     args.add_argument("--dry-run", action="store_true", help="Report actions without running them")
     args.add_argument("--check", action="store_true", help="Registry and handler self-check")
@@ -134,6 +149,11 @@ def main(argv: list[str] | None = None) -> int:
     if parsed_args.list_commands:
         for spec in load_commands():
             print(f"{spec.phrase}  [{spec.category} | {spec.action} | {spec.risk}]")
+        return 0
+    if parsed_args.web:
+        from .web_server import run_server
+
+        run_server(dry_run=parsed_args.dry_run, open_browser=True)
         return 0
     if parsed_args.gui:
         from .gui import run_gui

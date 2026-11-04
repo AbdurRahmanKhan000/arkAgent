@@ -50,7 +50,8 @@ _TENS = {
 _LEADING_FILLERS = (
     "hey ark ", "ark ", "please ", "kindly ", "can you please ",
     "could you please ", "can you ", "could you ", "would you ",
-    "i want to ", "i would like to ", "i need to ", "just ",
+    "i want to ", "i want you to ", "i would like to ", "i need to ",
+    "i need you to ", "just ", "ok ark ", "okay ark ",
 )
 
 
@@ -100,6 +101,17 @@ def normalize_daily(text: str) -> str:
         ("decrease the volume", "volume down"),
         ("scroll down a bit", "scroll down a little"),
         ("scroll up a bit", "scroll up a little"),
+        # v2 fixes from the v1.1 screenshot log.
+        ("set brightness level to ", "set brightness to "),
+        ("set volume level to ", "set volume to "),
+        ("open windows settings", "open settings"),
+        ("open window settings", "open settings"),
+        ("create a blank page in ms word", "create new word document"),
+        ("create a blank page in word", "create new word document"),
+        ("create a blank document in ms word", "create new word document"),
+        ("create a blank document in word", "create new word document"),
+        ("create a new blank page in word", "create new word document"),
+        ("open microsoft office word", "open microsoft word"),
     ]
     for old, new in replacements:
         value = value.replace(old, new)
@@ -118,11 +130,14 @@ def normalize_daily(text: str) -> str:
     for old, new in (
         ("launch ", "open "), ("start ", "open "), ("run ", "open "),
         ("open up ", "open "), ("exit ", "close "), ("quit ", "close "),
-        ("go to ", "open "),
+        ("go to ", "open "), ("show me ", "open "), ("bring up ", "open "),
+        ("turn on ", "open "), ("turn off ", "close "),
     ):
         if value.startswith(old):
             value = new + value[len(old):]
             break
+    # "set volume to 50" / "set brightness to 50" without "percent".
+    value = re.sub(r"(set (?:volume|brightness) to \d+)$", r"\1 percent", value)
     # "close the chrome browser" -> "close chrome"
     if value.startswith(("open ", "close ")):
         verb, _, rest = value.partition(" ")
@@ -177,7 +192,8 @@ class IntelligentParser:
             if parsed is not None:
                 return ResolvedCommand([parsed], "paraphrase", 0.95, daily, original=original)
         # 3. Multi-command: only if every part resolves on its own.
-        for separator in (" and then ", " and "):
+        # v2: also split on ", then", " then ", " after that ", and ", ".
+        for separator in (" and then ", ", then ", " then ", " after that ", " and ", ", "):
             if separator in daily:
                 parts = [p.strip() for p in daily.split(separator) if p.strip()]
                 if len(parts) >= 2:
@@ -189,6 +205,10 @@ class IntelligentParser:
                             " + ".join(r.understood_as for r in resolved_parts), original=original,
                         )
         # 4. Fuzzy: auto only for safe commands with a clear winner.
+        # v2: a single vague word ("page") must never trigger a
+        # suggestion like "page up". It is simply not a command.
+        if len(daily.split()) <= 1:
+            return ResolvedCommand([], "none", 0.0, "", original=original)
         best, best_score, second_score = self._fuzzy_best(daily)
         if best:
             parsed = self.parser.parse(best)

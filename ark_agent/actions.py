@@ -64,11 +64,33 @@ class ConfirmationManager:
         return self.pending
 
     def decide(self, text: str) -> bool | None:
-        """True = clear yes, False = clear no, None = ambiguous."""
-        value = " ".join(text.strip().lower().split())
-        if value in ("yes", "confirm", "yes confirm", "do it"):
+        """True = clear yes, False = clear no, None = ambiguous.
+
+        v2: voice often hears "yese", "yeah" or "yes please" instead
+        of a clean "yes". Accept common yes/no variants, and the
+        first word when the rest is politeness ("yes please").
+        Anything else stays ambiguous and never executes.
+        """
+        value = " ".join(text.strip().lower().split()).rstrip(".!?")
+        # Ambiguous / contradictory answers first: "yeah not sure"
+        # must never count as yes, even though it starts with "yeah".
+        if any(phrase in value for phrase in ("not sure", "not really", "maybe", "i don't know", "wait no", "hold on")):
+            return None
+        if value in (
+            "yes", "yeah", "yep", "yup", "sure", "ok", "okay", "confirm",
+            "yes confirm", "do it", "yes please", "please yes", "yese",
+            "yes do it", "go ahead",
+        ):
             return True
-        if value in ("no", "cancel", "stop", "do not"):
+        if value in (
+            "no", "nope", "cancel", "stop", "do not", "no please",
+            "do not do it", "never mind",
+        ):
+            return False
+        first = value.split(" ", 1)[0] if value else ""
+        if first in ("yes", "yeah", "yep", "sure"):
+            return True
+        if first in ("no", "nope"):
             return False
         return None
 

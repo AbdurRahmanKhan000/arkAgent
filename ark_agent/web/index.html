@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>arkAgent v2 — Laptop Agent</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>arkAgent <span class="badge">v2.0</span></h1>
+    <p class="subtitle">No LLM &bull; Offline &bull; 418 commands &bull; Tasks, not just single actions</p>
+  </div>
+  <div id="pill" class="pill idle">&#9679; Ready</div>
+</header>
+
+<main class="layout">
+  <section class="card left">
+    <div id="character" class="character idle" aria-label="arkAgent character">
+      <div class="ears"><span></span><span></span></div>
+      <div class="face">
+        <div class="eyes"><span class="eye"></span><span class="eye"></span></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="gear" title="Working">&#9881;</div>
+      <div class="char-label" id="charLabel">Ready. Type a task, or press Listen.</div>
+    </div>
+    <p class="muted">Last heard: <span id="lastHeard">—</span></p>
+    <div id="dictationBanner" class="banner hidden">
+      Dictation is ON — speech will be typed, not run as commands.
+      <button id="stopDictationBtn" class="btn small">Stop dictation</button>
+    </div>
+
+    <h2>Settings</h2>
+    <label>Vosk model folder
+      <input id="modelPath" type="text" placeholder="F:\models\vosk-model-en-us-0.22">
+    </label>
+    <p class="hint">Recommended for heavy use: <b>vosk-model-en-us-0.22</b> (about 128 MB). The small 0.15 model also works.</p>
+    <label>Default browser
+      <select id="defaultBrowser">
+        <option value="edge">Edge</option>
+        <option value="chrome">Chrome</option>
+        <option value="brave">Brave</option>
+        <option value="firefox">Firefox</option>
+        <option value="opera">Opera</option>
+      </select>
+    </label>
+    <button id="saveSettingsBtn" class="btn primary">Save settings</button>
+    <p id="settingsMsg" class="muted"></p>
+  </section>
+
+  <section class="card right">
+    <div id="taskPlan" class="task-plan hidden">
+      <h2 id="taskTitle">Task plan</h2>
+      <ol id="taskSteps"></ol>
+      <button id="confirmTaskBtn" class="btn primary">Run this task</button>
+      <button id="cancelTaskBtn" class="btn">Cancel</button>
+    </div>
+
+    <div id="suggestionBar" class="suggestion hidden">
+      <span id="suggestionText"></span>
+      <button id="suggestionYes" class="btn primary small">Yes</button>
+      <button id="suggestionNo" class="btn small">No</button>
+    </div>
+
+    <div id="log" class="log" aria-live="polite"></div>
+
+    <div class="input-row">
+      <input id="commandInput" type="text" placeholder="Try: open chrome and search for cats, or create a word document and type hello" autocomplete="off">
+      <button id="runBtn" class="btn primary">Run</button>
+      <button id="listenBtn" class="btn accent">Listen</button>
+      <button id="stopBtn" class="btn">Stop</button>
+    </div>
+
+    <div class="quick">
+      <span class="muted">Quick actions:</span>
+      <button class="btn small" data-cmd="open notepad">Notepad</button>
+      <button class="btn small" data-cmd="open edge">Edge</button>
+      <button class="btn small" data-cmd="open chrome">Chrome</button>
+      <button class="btn small" data-cmd="open visual studio code">VS Code</button>
+      <button class="btn small" data-cmd="open microsoft word">Word</button>
+      <button class="btn small" data-cmd="mute volume">Mute</button>
+      <button class="btn small" data-cmd="open this pc">This PC</button>
+    </div>
+
+    <div class="input-row">
+      <input id="searchInput" type="text" placeholder="Search commands, e.g. word, volume, chrome">
+      <button id="searchBtn" class="btn">Search</button>
+    </div>
+  </section>
+</main>
+
+<footer class="muted">Runs only on your laptop at 127.0.0.1. No cloud, no LLM. Dangerous actions still ask yes/no first.</footer>
+<script src="/app.js"></script>
+</body>
+</html>

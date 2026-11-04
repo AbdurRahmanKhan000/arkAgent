@@ -1,3 +1,55 @@
+# Self-review — arkAgent v2
+
+Reviewer: Muse, before delivery. This file is the verification
+record. It does not claim the agent is error-free on Windows —
+it records exactly what was tested, what failed, what was fixed,
+and what still needs testing on the user's laptop.
+
+## v2 review (this machine, Linux, Python 3.12)
+
+```
+python -m unittest discover -s tests
+Ran 71 tests — OK
+
+python -m ark_agent.main --check
+SELF-CHECK OK: 418 commands, 241 handlers, no duplicates.
+
+Text dry-run verified:
+  "open chrome and search for cats"
+    -> Task: Search in Chrome for 'cats' (2 steps, both dry-run OK)
+  "create a word document and type hello world"
+    -> Task: Word document with 'hello world' (3 steps, dry-run OK)
+  "set brightness level to 50"
+    -> Understood as: set brightness to 50 percent (v1.1 failure, fixed)
+  "page"
+    -> I do not recognise that command (no more "page up" suggestion)
+```
+
+What failed during v2 development, and was fixed before delivery:
+- Two tests failed on first run: "yeah not sure" was counted as
+  yes (ConfirmationManager first-word logic). Fixed by checking
+  ambiguous phrases ("not sure", "maybe", "i don't know") before
+  the first-word rule. Both the old action test and the new
+  voice-v2 test now pass.
+- Web test helper contained a broken unused function; removed.
+- Web UI files and server were tested with a real HTTP server
+  on an ephemeral port (status, command, task plan + execution,
+  suggestion yes/no, unknown).
+
+What v2 does NOT claim:
+- Vosk accuracy on the user's voice, accent, mic and room is
+  still only measurable on their laptop. v2 improves the odds
+  (alternatives, 30-second listening, 0.22 model recommendation),
+  but it cannot promise perfect recognition.
+- Web UI rendering and mic capture in their browser, and real
+  Word/Chrome automation steps on Windows, still need live
+  testing. Dry-run proves the plan logic, not Windows GUI steps.
+- A task plan is not a guarantee: if a step's app is missing
+  or a dialog needs manual input (e.g. a Save As filename),
+  the task stops and reports the step — it does not invent one.
+
+---
+
 # Self-review — arkAgent v1
 
 Reviewer: Muse, before delivery. This file is the verification

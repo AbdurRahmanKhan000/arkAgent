@@ -1,0 +1,49 @@
+:root { --bg:#0b1220; --panel:#16213a; --panel2:#1e2a4a; --text:#eef2ff; --muted:#94a3b8; --accent:#38bdf8; --green:#22c55e; --red:#ef4444; --amber:#f59e0b; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI", system-ui, sans-serif; background:linear-gradient(160deg,#0b1220,#111c33); color:var(--text); min-height:100vh; }
+.topbar { display:flex; justify-content:space-between; align-items:center; padding:18px 28px; }
+.topbar h1 { margin:0; font-size:30px; letter-spacing:.3px; }
+.badge { background:var(--accent); color:#0b1220; font-size:14px; padding:3px 10px; border-radius:999px; }
+.subtitle { margin:4px 0 0; color:var(--muted); }
+.pill { padding:8px 16px; border-radius:999px; font-weight:700; background:#334155; }
+.pill.listening { background:var(--red); color:#fff; }
+.pill.working { background:var(--amber); color:#111; }
+.pill.success { background:var(--green); color:#111; }
+.pill.error { background:var(--red); color:#fff; }
+.layout { display:grid; grid-template-columns:330px 1fr; gap:18px; padding:0 28px 18px; }
+.card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:20px; box-shadow:0 12px 30px rgba(0,0,0,.25); }
+.character { text-align:center; padding:10px 0 16px; }
+.face { width:170px; height:170px; margin:0 auto; background:var(--accent); border-radius:50%; position:relative; box-shadow:0 10px 24px rgba(56,189,248,.35); }
+.ears { width:170px; margin:0 auto; display:flex; justify-content:space-between; transform:translateY(12px); }
+.ears span { width:34px; height:34px; background:#0ea5e9; border-radius:50%; display:block; transition:transform .3s; }
+.character.listening .ears span, .character.working .ears span { transform:translateY(-10px); }
+.eyes { display:flex; justify-content:space-around; padding-top:58px; }
+.eye { width:20px; height:20px; background:#0b1220; border-radius:50%; animation:blink 4s infinite; }
+@keyframes blink { 0%,92%,100% { transform:scaleY(1); } 95% { transform:scaleY(.1); } }
+.mouth { width:34px; height:12px; background:#0b1220; border-radius:0 0 20px 20px; margin:28px auto 0; transition:height .15s; }
+.character.speaking .mouth { height:30px; animation:talk .5s infinite alternate; }
+@keyframes talk { from { height:14px; } to { height:32px; } }
+.character.error .mouth { height:4px; border-radius:4px; }
+.gear { display:none; font-size:34px; margin-top:10px; color:var(--amber); }
+.character.working .gear { display:block; animation:spin 1.2s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.char-label { margin-top:10px; font-weight:700; }
+.muted { color:var(--muted); }
+.hint { color:var(--muted); font-size:13px; }
+.banner { background:#3b2a00; border:1px solid var(--amber); border-radius:12px; padding:10px; margin:12px 0; }
+.hidden { display:none !important; }
+label { display:block; margin:12px 0 4px; font-size:14px; }
+input, select { width:100%; padding:11px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.2); background:#0b1220; color:var(--text); font-size:15px; }
+.btn { border:0; border-radius:12px; padding:11px 16px; background:#334155; color:var(--text); cursor:pointer; font-weight:700; }
+.btn:hover { filter:brightness(1.15); }
+.btn.primary { background:var(--accent); color:#0b1220; }
+.btn.accent { background:var(--green); color:#0b1220; }
+.btn.small { padding:8px 12px; font-size:13px; }
+.log { background:#050914; border-radius:14px; padding:14px; height:380px; overflow:auto; white-space:pre-wrap; font-family:Consolas, monospace; font-size:13.5px; line-height:1.5; }
+.input-row { display:flex; gap:10px; margin-top:14px; }
+.input-row input { flex:1; }
+.quick { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:14px; }
+.task-plan { background:#0b2a1a; border:1px solid var(--green); border-radius:14px; padding:14px; margin-bottom:14px; }
+.suggestion { background:#3b2a00; border:1px solid var(--amber); border-radius:14px; padding:12px; margin-bottom:14px; display:flex; gap:10px; align-items:center; }
+footer { padding:0 28px 20px; }
+@media (max-width: 900px) { .layout { grid-template-columns:1fr; } }

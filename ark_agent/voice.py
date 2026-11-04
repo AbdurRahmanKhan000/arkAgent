@@ -24,10 +24,21 @@ import json
 import re
 from dataclasses import dataclass
 
+from .intelligence import IntelligentParser
 from .parser import Parser
 from .user_config import get_vosk_model_path
 
 LOW_CONFIDENCE_THRESHOLD = 0.5
+
+# Recommended model for heavy, daily voice use (v2).
+# vosk-model-small-en-us-0.15 (~40 MB unpacked) works, but it
+# mishears longer sentences more often. vosk-model-en-us-0.22
+# (~128 MB) is the same offline technology, just a larger,
+# more accurate model — still small, still no cloud, still CPU.
+# Either folder works with this code; the larger one is recommended
+# if you use voice all day, as this user does.
+RECOMMENDED_MODEL = "vosk-model-en-us-0.22"
+SMALL_MODEL = "vosk-model-small-en-us-0.15"
 
 
 @dataclass
@@ -58,9 +69,35 @@ def parse_vosk_result(result_json: str) -> tuple[str, float | None]:
     return text, confidence
 
 
+def parse_vosk_alternatives(result_json: str) -> list[tuple[str, float | None]]:
+    """All candidate transcripts, best first.
+
+    v2 accuracy trick: Vosk can return up to 3 alternatives for one
+    utterance (SetMaxAlternatives). The top transcript is often
+    close but wrong ("open crome"), while the second alternative
+    is exactly right ("open chrome"). Trying alternatives in order
+    through the intelligent parser recovers many of those cases
+    without any LLM and without guessing a dangerous action.
+    """
+    try:
+        data = json.loads(result_json)
+    except json.JSONDecodeError:
+        return []
+    alternatives = data.get("alternatives") or []
+    out: list[tuple[str, float | None]] = []
+    for alt in alternatives:
+        if isinstance(alt, dict) and alt.get("text"):
+            out.append((str(alt["text"]).strip(), alt.get("confidence")))
+    if out:
+        return out
+    text, confidence = parse_vosk_result(result_json)
+    return [(text, confidence)] if text else []
+
+
 class VoiceEngine:
     def __init__(self, parser: Parser | None = None, model_path: str | None = None):
         self.parser = parser if parser is not None else Parser()
+        self.smart = IntelligentParser(self.parser)
         # v1.1: read the model path from arkagent_config.json if the
         # caller did not pass one, so the GUI no longer needs a code edit.
         self.model_path = model_path or get_vosk_model_path()
@@ -84,14 +121,14 @@ class VoiceEngine:
         otherwise a human-readable install message."""
         if not self.vosk_available:
             return (
-                "Vosk is not installed. Install it, then download the small "
-                "English model (vosk-model-small-en-us) from the official "
-                "Vosk models page and set model_path to that folder. "
-                "Text mode works without voice."
+                "Vosk is not installed. Install it, then download "
+                f"{RECOMMENDED_MODEL} (about 128 MB, recommended for heavy use) "
+                f"or {SMALL_MODEL} from the official Vosk models page and "
+                "set model_path to that folder. Text mode works without voice."
             )
         if not self.model_path:
             return (
-                "No Vosk model folder is set. Download vosk-model-small-en-us "
+                f"No Vosk model folder is set. Download {RECOMMENDED_MODEL} "
                 "from the official Vosk models page and set model_path."
             )
         try:
@@ -100,6 +137,13 @@ class VoiceEngine:
             self._model = Model(self.model_path)
             grammar = json.dumps(self.parser.grammar_phrases())
             self._recognizer = KaldiRecognizer(self._model, 16000, grammar)
+            # v2: ask Vosk for alternatives and word confidences, so
+            # a close-but-wrong top transcript can still be recovered.
+            try:
+                self._recognizer.SetMaxAlternatives(3)
+                self._recognizer.SetWords(True)
+            except Exception:
+                pass
             return ""
         except Exception as exc:
             return f"Could not load Vosk model: {exc}"
@@ -110,10 +154,13 @@ class VoiceEngine:
         self.last_transcript = text
         if not text:
             return VoiceResult("", "command", message="I did not hear anything.")
+        # Dictation exit is checked first, even in dictation mode, and
+        # with trailing politeness ("stop dictation please"), so the
+        # user can never get stuck in dictation (v1.1 screenshot bug).
         if text in ("start dictation", "start dictating"):
             self.mode = "dictation"
-            return VoiceResult(text, "dictation", message="Dictation started. Speech will be typed, not run as commands.")
-        if text in ("stop dictation", "stop dictating", "end dictation"):
+            return VoiceResult(text, "dictation", message="Dictation started. Speech will be typed, not run as commands. Say 'stop dictation' to exit.")
+        if text in ("stop dictation", "stop dictating", "end dictation", "stop dictation please", "exit dictation"):
             self.mode = "command"
             return VoiceResult(text, "command", message="Dictation stopped. Back to commands.")
         if self.mode == "dictation":
@@ -123,20 +170,50 @@ class VoiceEngine:
                 text, "low_confidence", confidence=confidence,
                 message=f"I heard '{text}', but I am not sure. Please repeat it.",
             )
-        command = self.parser.parse(text)
-        if command is None:
-            suggestions = self.parser.suggestions(text)
-            hint = f" Did you mean: {', '.join(suggestions)}?" if suggestions else ""
-            return VoiceResult(text, "command", message=f"I do not recognise that command.{hint}")
-        return VoiceResult(text, "command", command=command, confidence=confidence)
+        # v2: use the intelligent parser for voice too, so daily
+        # sentences and safe typos work by voice, not just by typing.
+        resolved = self.smart.resolve(text)
+        if resolved.commands:
+            # For multi-command and task sentences, the caller (web UI
+            # / GUI) re-resolves the text; here return the first command
+            # for backward compatibility, with the full text preserved.
+            return VoiceResult(text, "command", command=resolved.commands[0], confidence=confidence)
+        if resolved.method == "ask" and resolved.suggestion:
+            return VoiceResult(text, "command", message=f"Did you mean: {resolved.suggestion}?")
+        suggestions = self.parser.suggestions(text)
+        hint = f" Did you mean: {', '.join(suggestions)}?" if suggestions else ""
+        return VoiceResult(text, "command", message=f"I do not recognise that command.{hint}")
+
+    def process_transcript_with_alternatives(self, transcripts: list[tuple[str, float | None]]) -> VoiceResult:
+        """Try Vosk alternatives in order; return the first that parses.
+
+        If none parses, return the first alternative's result, so the
+        UI can still show "Did you mean?" or "I do not recognise".
+        """
+        fallback: VoiceResult | None = None
+        for alt_text, alt_conf in transcripts:
+            result = self.process_transcript(alt_text, confidence=alt_conf)
+            if fallback is None:
+                fallback = result
+            if result.command is not None or result.mode == "dictation":
+                return result
+        return fallback or VoiceResult("", "command", message="I did not hear anything.")
 
     def process_vosk_json(self, result_json: str) -> VoiceResult:
+        alternatives = parse_vosk_alternatives(result_json)
+        if alternatives:
+            return self.process_transcript_with_alternatives(alternatives)
         text, confidence = parse_vosk_result(result_json)
         return self.process_transcript(text, confidence=confidence)
 
     # -- microphone (only used by the GUI / CLI voice loop) ------------------
-    def listen_once(self, timeout_seconds: int = 10) -> VoiceResult:
+    def listen_once(self, timeout_seconds: int = 30) -> VoiceResult:
         """Record one push-to-talk utterance and return its VoiceResult.
+
+        v2: 30 seconds, not 10, so long task sentences are not cut
+        off mid-sentence. Vosk still ends the utterance early on
+        silence (endpoint detection), so short commands are not
+        slowed down by the longer timeout.
 
         Requires vosk + sounddevice + a loaded model. This method is
         intentionally not used by any unit test.
